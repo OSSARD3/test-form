@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {font-family: Verdana, Helvetica, Times;}
+* {box-sizing: border-box;}
+
+hr.smallhr {
+  border: 2px #092a31;
+}
+
+hr.bighr {
+  border: 5px solid #092a31;
+}
+
+.mask1 {
+  -webkit-mask-image: url(logo.png);
+  mask-image: url(logo.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.my_text {
+  font-family:    Helvetica;
+  font-size:      absolute;
+}
+
+.myDiv {
+  border: 0px outset transparent;
+  background-color: transparent;    
+  text-align: left;
+  font-family: Verdana;
+}
+
+h3 {
+  color: black;
+  font-family: Verdana;
+}
+
+h5 {
+  color: black;
+}
+
+p {
+  color: black;
+  font-family: Verdana; 
+  font-weight: lighter;
+  font-style: oblique;
+}
+
+.cols {
+  column-count: 5;
+  column-gap: 40px;
+  column-rule: 5px double #092a31;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  margin-top: 10px;
+  bottom: 15;
+  width: 100%;
+  background-color: #0f161b;
+  color: rgb(231, 231, 231);
+  text-align: center;
+  font-family: Verdana;
+  font-size: small;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #bed7da;
+  padding: 10px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: rgb(4, 26, 59);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  /* padding: 0px 0; */
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.img {
+  position:absolute;
+  padding: 5px;
+  width: 200px;
+  height: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: transparent;
+  padding: 0px;
+}
+
+.grid-container > div {
+  background-color: transparent;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 30px;
+}
+ /*this is for the languages part */
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.grid-container2 > div {
+  background-color: transparent;
+  text-align: center;
+  padding: 1px 0;
+  font-size: absolute;
+}
+
+.itemr1 {
+  grid-row: 1 / span 2;
+}
+
+/* for background image !not nes.
+.bg-img {
+  background-image: url("img_nature.jpg");
+
+  min-height: 380px;
+
+  Center and scale the image nicely 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+ !!! end of comment     */
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #5aa2a8;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #5aa2a8;
+  color: #092a31;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #5aa2a8;
+}
+
+
+</style>
+</head>
+
+
+
+<body style="background-color: #0f161b; color: #5aa2a8;">
+
+<div class="grid-container">
+  <div class="item1">
+    <img src="logo.png" alt="logo" style="width: 500px">
+  </div>  
+  <div class="item2">
+    <h3>CV Form</h3>
+  </div> 
+</div>
+
+
+<div class="my_text container">
+  <!--<div class="my_text"></div> -->
+  <form action="/action_page.php">
+    <label for="fname" class="myDiv">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name here...">
+
+    <label for="lname" class="myDiv">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name here...">
+
+    <label for="dept" class="myDiv">Department</label>
+    <select id="dept" name="dept">
+      <option value="accounting">Accounting</option>
+      <option value="it">IT</option>
+      <option value="shipping">Shipping & Energy</option>
+      <option value="travel">Travel</option>
+      <option value="tickets">Tickets</option>
+    </select>
+
+    <label for="dept" class="myDiv">Position</label>
+    <input type="text" id="position" name="position" placeholder="Your position here...">
+
+
+    <div class="myDiv">
+      <label>Languages</label>
+      <br><br>
+      <!-- <input type="text" id="languages" name="languages" placeholder="Please state your spoken languages (maternal and foreign). If foreign state your level (ie A1, A2, ect,)..."> -->
+      
+      
+      <div class="grid-container2">
+        <div class="itemr1">
+          <p>Choose languages and language skill level: ! please note that we currently include English, French, German, and Other. Levels ie A1/A2, B1/B2, C1/C2</p>
+        </div>  
+        <div class="itemr2">
+          <h5>English</h5>  
+          <select name="English" id="lg-eng">
+              <optgroup label="English level">
+                <option value="na">N/A</option>
+                <option value="lvlC">C1/C2</option>
+                <option value="lvlB">B1/B2</option>
+                <option value="lvlA">A1/A2</option>
+                <option value="lvlm">Maternal</option>
+              </optgroup>
+            </select>
+        </div> 
+
+        <div class="itemr3">
+          <h5>French</h5>  
+          <select name="French" id="lg-fre">
+            <optgroup label="French level">
+              <option value="na">N/A</option>
+              <option value="lvlC">C1/C2</option>
+              <option value="lvlB">B1/B2</option>
+              <option value="lvlA">A1/A2</option>
+              <option value="lvlm">Maternal</option>
+            </optgroup>
+          </select>
+        </div> 
+
+        <div class="itemr4">
+          <h5>German</h5>  
+          <select name="German" id="lg-ger">
+            <optgroup label="German level">
+              <option value="na">N/A</option>
+              <option value="lvlC">C1/C2</option>
+              <option value="lvlB">B1/B2</option>
+              <option value="lvlA">A1/A2</option>
+              <option value="lvlm">Maternal</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="itemr5">
+          <h5>Other</h5>  
+          <select name="Other" id="lg-other">
+            <optgroup label="Skill level">
+              <option value="na">N/A</option>
+              <option value="lvlC">C1/C2</option>
+              <option value="lvlB">B1/B2</option>
+              <option value="lvlA">A1/A2</option>
+              <option value="lvlm">Maternal</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <label for="subject" class="myDiv">Other</label>
+    <textarea id="subject" name="subject" placeholder="Write something in here..." style="height:200px"></textarea>
+    
+    <hr class="smallhr">
+    
+    <input type="file" id="fileupload" name="filename">
+    <input type="submit">
+    
+    
+    <hr class="bighr">
+    
+    <div class="tooltip" class="myDiv">
+      <input type="submit" onclick="alert('Do you want this form to be submitted? Press ok to confirm.')" value="Submit">
+      <span class="tooltiptext">Please make sure you've filled all your information</span>
+    </div>
+
+    
+  
+  </form>
+
+  <div class="footer">
+    <p>IT DEPARTMENT - AKTINA TRAVEL GROUP - 2023</p>
+  </div> 
+
+</div>
+
+</body>
+</html>
